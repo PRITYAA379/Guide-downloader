@@ -1,94 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Digital Asset – 5-Minute Read + Download</title>
-<meta name="color-scheme" content="dark">
-<style>
-  :root{
-    --bg:#0c0c10; --fg:#f3f4f6; --mute:#a5adb5; --brand:#ffd54a;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:radial-gradient(1200px 800px at 70% -20%,#1a1b24 0%,#0f1016 35%,#0c0c10 70%) fixed;color:var(--fg)}
-  .wrap{max-width:820px;margin:40px auto;padding:24px}
-  .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px 24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-  h1{margin:0 0 14px;font-size:clamp(26px,4.5vw,34px);color:var(--brand)}
-  h2{font-size:clamp(18px,3.5vw,22px);margin:24px 0 8px}
-  p,li{line-height:1.7;color:#d9dde3}
-  ul{padding-left:18px;margin:8px 0 0}
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;border-radius:12px;padding:12px 18px;transition:transform .2s,box-shadow .2s}
-  .btn-primary{background:linear-gradient(180deg,var(--brand),#ffb300);color:#1a1200;box-shadow:0 10px 30px rgba(255,208,90,.35)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .note{font-size:12px;color:var(--mute);margin-top:6px}
-  .hero{transform:perspective(1000px) rotateX(2deg) rotateY(-6deg);transition:transform .6s}
-  .hero:hover{transform:perspective(1000px) rotateX(0) rotateY(0) scale(1.01)}
-  .badge{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#e8eaed;margin-bottom:10px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>सिस्टीम रिसेट: तणावमुक्त जीवनाची गुरुकिल्ली</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a12;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 30px 20px;
+      background: linear-gradient(135deg, #0a0a12, #1a1a25);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    section {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #e0e0e0;
+    }
+
+    /* Breathing animation */
+    .breathing {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ffcc00;
+      margin: 30px auto;
+      animation: breathe 4s ease-in-out infinite;
+      box-shadow: 0 0 30px #ffcc00, 0 0 60px #ffcc00;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.5); opacity: 1; }
+    }
+
+    /* 3D Button */
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #ffcc00, #e6b800);
+      color: #0a0a12;
+      padding: 20px 40px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 15px;
+      box-shadow: 0 6px #b38f00, 0 6px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
+      margin: 40px 0;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px #b38f00, 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .download-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px #b38f00, 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #1a1a25, #0a0a12);
+      color: #999;
+    }
+
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="card hero" aria-label="5-Minute Read: Digital Asset">
-      <span class="badge">5-Minute Read • 2025</span>
-      <h1>What’s a Digital Asset & Who Should Start (2025)</h1>
 
-      <p><strong>Digital assets</strong> = internet-made valuables—ebooks, templates, courses, prompts, presets, checklists, swipe files, mini-apps. एकदा बनवलं की 24x7 विकलं जातं, without you being there.</p>
+  <header>
+    <h1>सिस्टीम रिसेट: तणावमुक्त जीवनाची सोपी गुरुकिल्ली</h1>
+    <p>तुमच्या शरीराचा कमांड सेंटर – Nervous System reset करून तुम्ही ताण, चिंता, थकवा आणि emotional blocks दूर करू शकता. Day 1 मध्ये Quick Reset Techniques आणि practical drills शिकून २ मिनिटांत system calm करा!</p>
+    <div class="breathing"></div>
+  </header>
 
-      <h2>Why it matters in 2025</h2>
-      <ul>
-        <li><strong>AI speedrun</strong>: reach global, cost low.</li>
-        <li><strong>Leverage &gt; Labour</strong>: one asset, 100+ sales.</li>
-        <li><strong>Resilient</strong>: skills/solutions sell in any cycle.</li>
-      </ul>
+  <section>
+    <h2>1. Nervous System Basics</h2>
+    <p>तुमच्या शरीरात एक powerful communication network आहे – Central + Peripheral Nervous System. Accelerator (Stress) आणि Brake (Calm) मोड्स समजून घ्या, जे तुमचं body + mind balance करतात.</p>
+  </section>
 
-      <h2>Who should start</h2>
-      <ul>
-        <li><strong>Students</strong>: notes → study kits, resume packs.</li>
-        <li><strong>Job folks</strong>: SOPs, dashboards, interview prep.</li>
-        <li><strong>Freelancers/Creators</strong>: proposal templates, content calendars, prompt libs.</li>
-        <li><strong>Business owners</strong>: playbooks, onboarding docs, checklists.</li>
-      </ul>
+  <section>
+    <h2>2. Quick Reset Techniques</h2>
+    <p>Breathing, Cold Exposure, Humming, Movement – practical drills जे २ मिनिटांत nervous system calm करतात. तुमचा stress-response system regulate करून तुम्हाला immediate relief मिळतं.</p>
+  </section>
 
-      <h2>Starter ideas</h2>
-      <ul>
-        <li>1-hour <strong>micro course</strong> (loom + notion).</li>
-        <li><strong>Canva templates</strong> for reels, decks, thumbnails.</li>
-        <li><strong>Prompt packs</strong> (chat/image/video).</li>
-        <li><strong>Swipe files</strong>: cold DMs, ads, hooks.</li>
-        <li><strong>Notion systems</strong>: habit/finance/agency OS.</li>
-      </ul>
+  <section>
+    <h2>3. Resilience & Flow</h2>
+    <p>Micro-stress, routines, mindset, tribe support, self-compassion वापरून तुम्ही resilience build कराल. Calm system = Peak Performance + Flow state easy access.</p>
+  </section>
 
-      <h2>3-Step kickstart</h2>
-      <ul>
-        <li><strong>Pick a pain</strong>: solve 1 tight problem (₹0–₹999).</li>
-        <li><strong>Package clean</strong>: cover + 3 bullets (Outcome/Time/Proof) + 1-page demo.</li>
-        <li><strong>Post 7 days</strong>: 1 tip, 1 story, 1 CTA—same link.</li>
-      </ul>
+  <section>
+    <h2>4. Life Integration</h2>
+    <p>Body, mind, soul alignment – relationships, career, creativity, spirituality. Calm nervous system = deep connection, clarity, high focus आणि superhuman energy.</p>
+  </section>
 
-      <h2>Price ladder</h2>
-      <ul>
-        <li>₹0 lead magnet → trust</li>
-        <li>₹299–₹699 starter win → social proof</li>
-        <li>₹999–₹2,999 pro bundle → systems + support doc</li>
-      </ul>
+  <section style="text-align:center;">
+    <a href="https://prityaa379.gumroad.com/l/nisxb" target="_blank" class="download-btn">Day 1 Free Download</a>
+  </section>
 
-      <h2>Common mistakes</h2>
-      <ul>
-        <li>Brand वर overfocus—<em>Outcome &gt; aesthetics</em>.</li>
-        <li>50 features dump—<em>Show 3 clear wins</em>.</li>
-        <li>Perfect launchची वाट—<em>Ship v1, iterate</em>.</li>
-      </ul>
+  <footer>
+    © 2025 | सिस्टीम रिसेट – Calm, Focus & Stress-Free Life
+  </footer>
 
-      <p><strong>Bottom line:</strong> जर तू earn करायला serious असशील, हा guide तुझं पहिलं digital asset zero confusion-ने launch करायला मदत करेल. Confused? Download, वाचा, आणि doubt असेल तर DM.</p>
-
-      <div class="cta">
-        <a class="btn btn-primary" href="https://prityaa379.gumroad.com/l/msqxk" target="_blank" rel="noopener">
-          📥 Download Now
-        </a>
-      </div>
-      <div class="note">Only for people interested in earning. Not a casual read.</div>
-    </section>
-  </div>
 </body>
 </html>
