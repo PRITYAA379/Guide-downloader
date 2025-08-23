@@ -1,368 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Midnight Nervous System Reset</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nervous System Reset</title>
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
     body {
-      background: #0a0e17;
-      color: #e0e0ff;
-      font-family: 'Avenir', 'Segoe UI', sans-serif;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #050508;
+      color: #fff;
       overflow-x: hidden;
-      line-height: 1.6;
     }
-    .scroll-container {
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      background: linear-gradient(to bottom, #050814, #0e1525);
-      position: relative;
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(145deg, #0a0a12, #111);
     }
-    /* Neural pathway background effect */
-    .scroll-container::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(41, 18, 86, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(37, 38, 89, 0.3) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: -1;
-    }
-    .page {
-      height: 100vh;
-      width: 100vw;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      scroll-snap-align: start;
-      position: relative;
-      overflow: hidden;
-    }
-    .anatomy-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0.05;
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
-    }
-    h1 {
-      font-size: 3.5rem;
-      color: #b8c2ff;
-      text-shadow: 0 0 15px rgba(184, 194, 255, 0.5);
-      margin-bottom: 1.5rem;
-      font-weight: 300;
+    header h1 {
+      font-size: 2.5rem;
       letter-spacing: 2px;
     }
-    h2 {
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    section h2 {
       font-size: 2rem;
-      color: #a3b2ff;
-      margin-bottom: 2rem;
-      font-weight: 400;
+      margin-bottom: 1rem;
       text-align: center;
     }
-    p {
-      font-size: 1.4rem;
-      margin: 1rem 0;
-      max-width: 800px;
-      text-align: center;
-      font-weight: 300;
-    }
-    .dramatic {
-      font-size: 2.5rem;
-      color: #8a9dff;
-      text-shadow: 0 0 10px rgba(138, 157, 255, 0.7);
-      margin: 2rem 0;
-      font-weight: 500;
-    }
-    .instruction {
-      background: rgba(25, 30, 52, 0.6);
-      border-left: 3px solid #6c81e0;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      max-width: 700px;
-      text-align: left;
-      font-size: 1.3rem;
-    }
-    .pulse {
-      animation: pulse 3s infinite ease-in-out;
-    }
-    @keyframes pulse {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { opacity: 0.7; }
-    }
-    .neural-path {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' fill='none'%3E%3Cpath d='M0,60 C180,120 360,0 540,60 C720,120 900,0 1080,60 C1260,120 1440,0 1440,0 V120 H0 Z' fill='rgba(106, 90, 205, 0.2)'/%3E%3C/svg%3E");
-      background-size: cover;
-      animation: waveMotion 8s infinite ease-in-out;
-      z-index: -1;
-    }
-    @keyframes waveMotion {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(-30px); }
-      100% { transform: translateX(0); }
-    }
-    .scroll-indicator {
-      position: fixed;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #6c81e0;
-      font-size: 1.5rem;
-      animation: bounce 2s infinite;
-      z-index: 1000;
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-      40% {transform: translateY(-30px);}
-      60% {transform: translateY(-15px);}
-    }
-    .neuro-node {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: #8a9dff;
-      border-radius: 50%;
-      box-shadow: 0 0 10px 2px rgba(138, 157, 255, 0.7);
-      animation: glow 3s infinite alternate;
-    }
-    @keyframes glow {
-      from { box-shadow: 0 0 5px 2px rgba(138, 157, 255, 0.5); }
-      to { box-shadow: 0 0 15px 4px rgba(138, 157, 255, 0.9); }
+    section p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
     }
     .contact-section {
-      background: linear-gradient(to bottom, #0a0e17, #070a14);
-      padding: 4rem 2rem;
+      background: #0a0a12;
+      padding: 3rem 2rem;
       text-align: center;
     }
+    .contact-section h2 {
+      margin-bottom: 1rem;
+    }
     .contact-form {
-      max-width: 600px;
-      margin: 2rem auto;
-      display: grid;
-      gap: 1.2rem;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
     }
     .contact-form input, .contact-form textarea {
-      padding: 1.2rem;
-      background: rgba(25, 30, 52, 0.6);
-      border: 1px solid #4a5699;
-      color: #e0e0ff;
-      border-radius: 4px;
-      font-size: 1.1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1rem;
     }
     .contact-form textarea {
-      grid-column: span 2;
-      height: 150px;
       resize: vertical;
+      min-height: 100px;
     }
     .submit-btn {
-      grid-column: span 2;
-      background: linear-gradient(to right, #6c81e0, #8a9dff);
-      color: #0a0e17;
+      background: linear-gradient(90deg, #ff0080, #7928ca);
+      color: #fff;
+      padding: 0.9rem;
+      font-size: 1.1rem;
       border: none;
-      padding: 1.2rem;
-      font-size: 1.2rem;
+      border-radius: 5px;
       cursor: pointer;
-      border-radius: 4px;
-      transition: all 0.3s;
-      font-weight: 500;
+      transition: 0.3s;
     }
     .submit-btn:hover {
-      background: linear-gradient(to right, #8a9dff, #a3b2ff);
-      box-shadow: 0 0 15px rgba(138, 157, 255, 0.5);
-    }
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      .dramatic { font-size: 2rem; }
-      p { font-size: 1.2rem; }
-      .contact-form { grid-template-columns: 1fr; }
-      .contact-form textarea, .submit-btn { grid-column: 1; }
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,0,128,0.7);
     }
   </style>
 </head>
 <body>
-  <div class="scroll-container">
-    <!-- Neural nodes background elements -->
-    <div class="neuro-node" style="top: 15%; left: 20%;"></div>
-    <div class="neuro-node" style="top: 40%; left: 85%;"></div>
-    <div class="neuro-node" style="top: 70%; left: 10%;"></div>
-    <div class="neuro-node" style="top: 25%; left: 75%;"></div>
-    <div class="neuro-node" style="top: 60%; left: 45%;"></div>
-    
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M50,15 L60,40 L85,40 L65,55 L75,85 L50,70 L25,85 L35,55 L15,40 L40,40 Z\' fill=\'%238a9dff\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h1>NEURO-RESET</h1>
-      <h2>Midnight Nervous System Restoration</h2>
-      <p class="dramatic pulse">In the stillness of night, we find renewal</p>
-      <p>Scroll down to begin your journey into neural recalibration</p>
-      <div class="neural-path"></div>
-      <div class="scroll-indicator">▼ Scroll ▼</div>
-    </div>
+  <header>
+    <h1>Nervous System Reset – Day 1</h1>
+  </header>
 
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'45\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'35\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'25\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Circadian Alignment</h2>
-      <p class="dramatic">Your nervous system listens when the world is quiet</p>
-      <div class="instruction">
-        <p>Close your eyes. Notice the rhythm of your breath without changing it.</p>
-        <p>Inhale for 4 counts, exhale for 6 counts.</p>
-      </div>
-      <p>Nighttime offers unique conditions for neural repatterning</p>
-      <div class="neural-path"></div>
-    </div>
+  <section>
+    <h2>Why Nervous System Reset?</h2>
+    <p>In today’s world, stress, anxiety, and overstimulation are constant triggers. Your nervous system holds the memory of every experience—both good and bad. Resetting it helps you heal, recharge, and find inner calm.</p>
+    <p>Think of your nervous system as your body’s software. Just like any software, it sometimes needs a reset to run smoothly. Through mindful breathing and meditation, you can shift from chaos to clarity.</p>
+  </section>
 
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M20,20 C40,5 60,5 80,20\' stroke=\'%238a9dff\' stroke-width=\'0.5\' fill=\'none\' opacity=\'0.3\'/%3E%3Cpath d=\'M20,40 C40,25 60,25 80,40\' stroke=\'%238a9dff\' stroke-width=\'0.5\' fill=\'none\' opacity=\'0.3\'/%3E%3Cpath d=\'M20,60 C40,45 60,45 80,60\' stroke=\'%238a9dff\' stroke-width=\'0.5\' fill=\'none\' opacity=\'0.3\'/%3E%3Cpath d=\'M20,80 C40,65 60,65 80,80\' stroke=\'%238a9dff\' stroke-width=\'0.5\' fill=\'none\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Vagus Nerve Activation</h2>
-      <p class="dramatic">The pathway to calm begins with the vagus nerve</p>
-      <div class="instruction">
-        <p>Place one hand on your chest, the other on your abdomen.</p>
-        <p>Breathe deeply into your diaphragm, feeling your abdomen rise.</p>
-      </div>
-      <p>This stimulates the parasympathetic nervous system</p>
-      <div class="neural-path"></div>
-    </div>
+  <section>
+    <h2>Day 1 Practice</h2>
+    <p>Step 1: Sit comfortably, spine straight, shoulders relaxed.</p>
+    <p>Step 2: Inhale deeply through the nose for 4 seconds.</p>
+    <p>Step 3: Hold your breath for 4 seconds.</p>
+    <p>Step 4: Exhale slowly through the mouth for 6 seconds.</p>
+    <p>Step 5: Pause for 2 seconds before the next breath.</p>
+    <p>Repeat for 10 minutes. Notice how your body shifts from tension to calmness.</p>
+  </section>
 
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M20,50 L80,50\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Cpath d=\'M50,20 L50,80\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'10\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Cortical Balance</h2>
-      <p class="dramatic">Harmonizing left and right brain hemispheres</p>
-      <div class="instruction">
-        <p>Using your thumb, gently press the point between your eyebrows.</p>
-        <p>Apply gentle pressure while taking three deep breaths.</p>
-      </div>
-      <p>This stimulates the prefrontal cortex and promotes neural integration</p>
-      <div class="neural-path"></div>
-    </div>
+  <section>
+    <h2>Mind-Body Awareness</h2>
+    <p>During this practice, observe your thoughts without judgment. Your goal is not to control your mind, but to gently guide it back to the rhythm of your breath. This awareness builds resilience and emotional balance.</p>
+  </section>
 
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M30,30 L70,30 L70,70 L30,70 Z\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Cpath d=\'M40,40 L60,40 L60,60 L40,60 Z\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Cpath d=\'M45,45 L55,45 L55,55 L45,55 Z\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Neural Pathway Optimization</h2>
-      <p class="dramatic">Rewiring stress responses into calm awareness</p>
-      <div class="instruction">
-        <p>Visualize a soft, indigo light moving up your spine.</p>
-        <p>With each vertebra it passes, feel a wave of relaxation.</p>
-      </div>
-      <p>This mental imagery creates new neural pathways for relaxation</p>
-      <div class="neural-path"></div>
-    </div>
+  <div class="contact-section">
+    <h2>Connect for Personalized Guidance</h2>
+    <p>Experience a one-on-one nervous system reset session</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Location">
+      <input type="tel" placeholder="Phone (optional)">
+      <textarea placeholder="What aspect of your nervous system would you like to focus on?"></textarea>
+      <button type="submit" class="submit-btn">Request Consultation</button>
+    </form>
+    <p style="margin-top: 2rem; font-size: 1.1rem;">Neural Reset Therapy • Mumbai 2025</p>
 
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M20,50 C30,30 70,30 80,50\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Cpath d=\'M20,50 C30,70 70,70 80,50\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Pineal Activation</h2>
-      <p class="dramatic">Harmonizing your body's natural rhythms</p>
-      <div class="instruction">
-        <p>Gently tap the crown of your head with your fingertips.</p>
-        <p>Imagine a connection between this point and the center of your brain.</p>
-      </div>
-      <p>The pineal gland regulates circadian rhythms and melatonin production</p>
-      <div class="neural-path"></div>
-    </div>
-
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M50,20 L70,40 L60,60 L40,60 L30,40 Z\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'5\' fill=\'%238a9dff\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Limbic System Repatterning</h2>
-      <p class="dramatic">Releasing emotional charge from past experiences</p>
-      <div class="instruction">
-        <p>Place your hands over your heart center.</p>
-        <p>With each exhale, release one thought that no longer serves you.</p>
-      </div>
-      <p>The limbic system processes emotions and memory</p>
-      <div class="neural-path"></div>
-    </div>
-
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M20,20 L50,50 L20,80\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3Cpath d=\'M80,20 L50,50 L80,80\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\'/%3E%3C/svg%3E');"></div>
-      <h2>Neuroplastic Integration</h2>
-      <p class="dramatic">Your brain is reshaping itself in this moment</p>
-      <div class="instruction">
-        <p>Take a moment to scan your body from head to toe.</p>
-        <p>Notice any areas of tension and breathe into them.</p>
-      </div>
-      <p>Neuroplasticity allows your brain to form new connections throughout life</p>
-      <div class="neural-path"></div>
-    </div>
-
-    <div class="page">
-      <div class="anatomy-bg" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'40\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\' stroke-dasharray=\'5,5\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'30\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\' stroke-dasharray=\'5,5\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'20\' fill=\'none\' stroke=\'%238a9dff\' stroke-width=\'0.5\' opacity=\'0.3\' stroke-dasharray=\'5,5\'/%3E%3C/svg%3E');"></div>
-      <h2>Complete Neural Recalibration</h2>
-      <p class="dramatic">Integration of mind, body and nervous system</p>
-      <div class="instruction">
-        <p>Take three final deep breaths, imagining your entire nervous system glowing with peaceful energy.</p>
-        <p>When you're ready, gently open your eyes.</p>
-      </div>
-      <p>Practice this reset regularly to maintain optimal nervous system function</p>
-      <div class="neural-path"></div>
-    </div>
-
-    <div class="contact-section">
-      <h2>Connect for Personalized Guidance</h2>
-      <p>Experience a one-on-one nervous system reset session</p>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Location">
-        <input type="tel" placeholder="Phone (optional)">
-        <textarea placeholder="What aspect of your nervous system would you like to focus on?"></textarea>
-        <button type="submit" class="submit-btn">Request Consultation</button>
-      </form>
-      <p style="margin-top: 2rem; font-size: 1.1rem;">Neural Reset Therapy • Mumbai 2025</p>
-    </div>
+    <!-- Gumroad Product Button -->
+    <a href="https://prityaa379.gumroad.com/l/fjgar" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; margin-top:2rem; text-align:center;">
+      Read Full Day 1 →
+    </a>
   </div>
-
-  <script>
-    // Simple form submission feedback
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your interest! We will connect with you within 24 hours to schedule your neural reset session.');
-      this.reset();
-    });
-    
-    // Hide scroll indicator after scrolling begins
-    const scrollContainer = document.querySelector('.scroll-container');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    
-    scrollContainer.addEventListener('scroll', function() {
-      if (scrollContainer.scrollTop > 100) {
-        scrollIndicator.style.display = 'none';
-      } else {
-        scrollIndicator.style.display = 'block';
-      }
-    });
-    
-    // Add more neural nodes on click for interactive experience
-    document.body.addEventListener('click', function(e) {
-      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        const node = document.createElement('div');
-        node.className = 'neuro-node';
-        node.style.left = e.pageX + 'px';
-        node.style.top = e.pageY + 'px';
-        document.body.appendChild(node);
-        
-        // Remove after animation completes
-        setTimeout(() => {
-          node.remove();
-        }, 3000);
-      }
-    });
-  </script>
 </body>
-</html>
+</htm
